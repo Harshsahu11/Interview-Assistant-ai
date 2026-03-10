@@ -9,7 +9,7 @@ async function authUser(req,res,next){
         });
     }
 
-    const isTokenBlacklisted = await blacklistTokenModel.findOne(token);
+    const isTokenBlacklisted = await blacklistTokenModel.findOne({token});
 
     if(isTokenBlacklisted){
         return res.status(401).json({
