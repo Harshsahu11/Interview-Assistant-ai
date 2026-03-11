@@ -46,7 +46,7 @@ const skillGapsSchema = new mongoose.Schema(
       type: String,
       required: [true, "Skills are required"],
     },
-    sevirity: {
+    severity: {
       type: String,
       enum: ["low", "medium", "high"],
       required: [true, "severity is required"],
@@ -96,8 +96,8 @@ const interviewReportSchema = new mongoose.Schema(
       min: 0,
       max: 100,
     },
-    technicalQuestion: [technicalQuestionSchema],
-    behavioralQuestion: [behavioralQuestionSchema],
+    technicalQuestions: [technicalQuestionSchema],
+    behavioralQuestions: [behavioralQuestionSchema],
     skillGaps: [skillGapsSchema],
     preparationPlan: [PreparationPlanSchema],
   },
