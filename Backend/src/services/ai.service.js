@@ -90,7 +90,7 @@ const interviewReportSchema = z.object({
     .describe(
       "The title of the job for which the interview report is generated",
     ),
-});
+}).strict();
 
 async function generateInterviewReport({
   resume,
@@ -102,7 +102,6 @@ Generate an interview report for a candidate with the following details:
 Resume: ${resume}
 Self Description: ${selfDescription}
 Job Description: ${jobDescription}
-
 `;
 
   const response = await ai.models.generateContent({
