@@ -98,10 +98,10 @@ async function generateInterviewReport({
   jobDescription,
 }) {
   const prompt = `
-                        Generate an interview report for a candidate with the following details:
-                        Resume: ${resume}
-                        Self Description: ${selfDescription}
-                        Job Description: ${jobDescription}
+Generate an interview report for a candidate with the following details:
+Resume: ${resume}
+Self Description: ${selfDescription}
+Job Description: ${jobDescription}
 
 `;
 
