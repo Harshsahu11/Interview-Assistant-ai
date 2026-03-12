@@ -9,12 +9,13 @@ connectToDB();
 
 const PORT = process.env.PORT || 3000;
 
-
+/* Serve frontend */
 const frontendPath = path.join(__dirname, "../Frontend/dist");
 
 app.use(express.static(frontendPath));
 
-app.get("/(.*)", (req, res) => {
+/* React/Vite SPA fallback */
+app.use((req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
