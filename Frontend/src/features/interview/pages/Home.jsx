@@ -21,7 +21,7 @@ const Home = () => {
     if (loading) {
         return (
             <main className='loading-screen'>
-                <h1>Loading your interview plan...</h1>
+                <h1>Loading Please wait...</h1>
             </main>
         )
     }
@@ -31,8 +31,8 @@ const Home = () => {
 
             {/* Page Header */}
             <header className='page-header'>
-                <h1>Create Your Custom <span className='highlight'>Interview Plan</span></h1>
-                <p>Let our AI analyze the job requirements and your unique profile to build a winning strategy.</p>
+                <h1>Get <span className='highlight'>Interview Plan</span></h1>
+                <p>Let AI decide best for You.</p>
             </header>
 
             {/* Main Card */}
@@ -45,7 +45,7 @@ const Home = () => {
                             <span className='panel__icon'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>
                             </span>
-                            <h2>Target Job Description</h2>
+                            <h2>Job Description</h2>
                             <span className='badge badge--required'>Required</span>
                         </div>
                         <textarea
@@ -90,7 +90,7 @@ const Home = () => {
 
                         {/* Quick Self-Description */}
                         <div className='self-description'>
-                            <label className='section-label' htmlFor='selfDescription'>Quick Self-Description</label>
+                            <label className='section-label' htmlFor='selfDescription'> Self-Description</label>
                             <textarea
                                 onChange={(e) => { setSelfDescription(e.target.value) }}
                                 id='selfDescription'
@@ -100,13 +100,7 @@ const Home = () => {
                             />
                         </div>
 
-                        {/* Info Box */}
-                        <div className='info-box'>
-                            <span className='info-box__icon'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" stroke="#1a1f27" strokeWidth="2" /><line x1="12" y1="16" x2="12.01" y2="16" stroke="#1a1f27" strokeWidth="2" /></svg>
-                            </span>
-                            <p>Either a <strong>Resume</strong> or a <strong>Self Description</strong> is required to generate a personalized plan.</p>
-                        </div>
+                        
                     </div>
                 </div>
 

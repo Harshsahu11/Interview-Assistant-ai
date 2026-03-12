@@ -1,373 +1,428 @@
-// ── Variables ────────────────────────────────────────────────────────────────
-$bg-page:        #0d1117;
-$bg-card:        #161b22;
-$bg-panel:       #1c2230;
-$bg-input:       #1e2535;
-$border-color:   #2a3348;
-$text-primary:   #e6edf3;
-$text-muted:     #7d8590;
-$accent:         #ff2d78;
-$accent-alt:     #ff6b9d;
-$badge-required: #ff2d78;
-$badge-best:     #ff2d78;
-$info-bg:        #1b2a4a;
-$info-border:    #2d4a7a;
-$font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+/* ===============================
+   Color Variables
+================================ */
 
-// ── Page Shell ───────────────────────────────────────────────────────────────
+$bg: #0f1424;
+$card-bg: #121a2b;
+$border: #24314d;
+$text: #e8edf7;
+$text-muted: #9aa6c2;
+$primary: #4f8cff;
+$primary-hover: #3a72db;
+$danger: #ff5c5c;
+$success: #38d39f;
+$warning: #f5a524;
+
+/* ===============================
+   Page Layout
+================================ */
+
 .home-page {
-    width: 100%;
-    min-height: 100vh;
-    background-color: $bg-page;
-    color: $text-primary;
-    font-family: $font-stack;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1.5rem;
-    gap: 2rem;
+  background: linear-gradient(180deg, #0b1020, #0f1424);
+  min-height: 100vh;
+  padding: 40px 60px;
+  color: $text;
+  font-family: "Inter", sans-serif;
 }
 
-// ── Page Header ──────────────────────────────────────────────────────────────
+/* ===============================
+   Header
+================================ */
+
 .page-header {
-    text-align: center;
+  text-align: center;
+  margin-bottom: 40px;
 
-    h1 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: $text-primary;
-    }
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+  }
 
-    p {
-        color: $text-muted;
-        font-size: 0.95rem;
-        max-width: 480px;
-        margin: 0 auto;
-        line-height: 1.6;
-    }
-
-    .highlight {
-        color: $accent;
-    }
+  p {
+    color: $text-muted;
+    margin-top: 10px;
+  }
 }
 
-// ── Main Card ─────────────────────────────────────────────────────────────────
+.highlight {
+  color: $primary;
+}
+
+/* ===============================
+   Main Card
+================================ */
+
 .interview-card {
-    width: 100%;
-    max-width: 900px;
-    background-color: $bg-card;
-    border: 1px solid $border-color;
-    border-radius: 1rem;
-    overflow: hidden;
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 14px;
+  overflow: hidden;
+  max-width: 1100px;
+  margin: auto;
 
-    &__body {
-        display: flex;
-        min-height: 520px;
-    }
+  &__body {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+  }
 
-    &__footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 1.5rem;
-        border-top: 1px solid $border-color;
-
-        .footer-info {
-            font-size: 0.8rem;
-            color: $text-muted;
-        }
-    }
+  &__footer {
+    border-top: 1px solid $border;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-// ── Panels ────────────────────────────────────────────────────────────────────
-.panel-divider {
-    width: 1px;
-    background-color: $border-color;
-    flex-shrink: 0;
-}
+/* ===============================
+   Panels
+================================ */
 
 .panel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 
-    &__header {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 0.25rem;
-
-        h2 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: $text-primary;
-            flex: 1;
-        }
-    }
-
-    &__icon {
-        display: flex;
-        align-items: center;
-        color: $accent;
-    }
-
-    &__textarea {
-        flex: 1;
-        width: 100%;
-        background-color: $bg-input;
-        border: 1px solid $border-color;
-        border-radius: 0.5rem;
-        padding: 0.75rem 1rem;
-        color: $text-primary;
-        font-family: $font-stack;
-        font-size: 0.875rem;
-        resize: none;
-        outline: none;
-        transition: border-color 0.2s;
-        line-height: 1.5;
-
-        &::placeholder {
-            color: $text-muted;
-        }
-
-        &:focus {
-            border-color: $accent;
-        }
-
-        &--short {
-            flex: unset;
-            height: 96px;
-        }
-    }
-
-    &--left {
-        position: relative;
-
-        .char-counter {
-            position: absolute;
-            bottom: 2.25rem;
-            right: 2rem;
-            font-size: 0.75rem;
-            color: $text-muted;
-        }
-    }
-
-    &--right {
-        gap: 0.75rem;
-    }
-}
-
-// ── Badges ────────────────────────────────────────────────────────────────────
-.badge {
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 0.15rem 0.5rem;
-    border-radius: 0.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-
-    &--required {
-        background-color: rgba($badge-required, 0.15);
-        color: $badge-required;
-        border: 1px solid rgba($badge-required, 0.3);
-    }
-
-    &--best {
-        background-color: rgba($badge-best, 0.15);
-        color: $badge-best;
-        border: 1px solid rgba($badge-best, 0.3);
-    }
-}
-
-// ── Section Label ─────────────────────────────────────────────────────────────
-.section-label {
+  &__header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: $text-primary;
-    margin-bottom: 0.25rem;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    color: $primary;
+  }
+
+  &__textarea {
+    resize: none;
+    background: #0d1324;
+    border: 1px solid $border;
+    border-radius: 8px;
+    padding: 14px;
+    color: $text;
+    min-height: 220px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+
+    &--short {
+      min-height: 120px;
+      width: 500px;
+    }
+  }
 }
 
-// ── Dropzone ──────────────────────────────────────────────────────────────────
-.upload-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.panel--right {
+  width: 100%;
 }
+
+/* ===============================
+   Divider
+================================ */
+
+.panel-divider {
+  width: 1px;
+  background: $border;
+}
+
+/* ===============================
+   Character Counter
+================================ */
+
+.char-counter {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right;
+  color: $text-muted;
+}
+
+/* ===============================
+   Upload Section
+================================ */
+
+.upload-section {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.section-label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ===============================
+   Resume Dropzone
+================================ */
 
 .dropzone {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    padding: 1.5rem 1rem;
-    background-color: $bg-input;
-    border: 2px dashed $border-color;
-    border-radius: 0.6rem;
-    cursor: pointer;
-    transition: border-color 0.2s, background-color 0.2s;
+  border: 2px dashed $border;
+  border-radius: 10px;
+  padding: 28px 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #0e1320;
 
-    &:hover {
-        border-color: $accent;
-        background-color: rgba($accent, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 140px;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: $primary;
+    background: #10182a;
+  }
+
+  &__icon {
+    margin-bottom: 12px;
+    color: $primary;
+
+    svg {
+      width: 32px;
+      height: 32px;
     }
+  }
 
-    &__icon {
-        color: $accent;
-        margin-bottom: 0.25rem;
-    }
-
-    &__title {
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: $text-primary;
-        margin: 0;
-    }
-
-    &__subtitle {
-        font-size: 0.75rem;
-        color: $text-muted;
-        margin: 0;
-    }
-}
-
-// ── OR Divider ────────────────────────────────────────────────────────────────
-.or-divider {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: $text-muted;
-    font-size: 0.75rem;
-
-    &::before,
-    &::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background-color: $border-color;
-    }
-
-    span {
-        white-space: nowrap;
-    }
-}
-
-// ── Self Description ──────────────────────────────────────────────────────────
-.self-description {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-// ── Info Box ──────────────────────────────────────────────────────────────────
-.info-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    padding: 0.75rem 1rem;
-    background-color: $info-bg;
-    border: 1px solid $info-border;
-    border-radius: 0.5rem;
-
-    &__icon {
-        flex-shrink: 0;
-        color: #4a90e2;
-        margin-top: 1px;
-    }
-
-    p {
-        margin: 0;
-        font-size: 0.8rem;
-        color: #8ab4f8;
-        line-height: 1.5;
-
-        strong {
-            color: $text-primary;
-        }
-    }
-}
-
-// ── Generate Button ───────────────────────────────────────────────────────────
-.generate-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, $accent 0%, darken($accent, 10%) 100%);
-    color: #fff;
-    font-size: 0.9rem;
+  &__title {
+    font-size: 15px;
     font-weight: 600;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.1s;
-    font-family: $font-stack;
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    font-size: 13px;
+    color: $text-muted;
+  }
+}
+
+/* ===============================
+   OR Divider
+================================ */
+
+.or-divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+
+  span {
+    background: $card-bg;
+    padding: 0 12px;
+    color: $text-muted;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: $border;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: -1;
+  }
+}
+
+/* ===============================
+   Info Box
+================================ */
+
+.info-box {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #101728;
+  border: 1px solid $border;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  p {
+    font-size: 13px;
+    color: $text-muted;
+  }
+
+  &__icon {
+    color: $primary;
+  }
+}
+
+/* ===============================
+   Badges
+================================ */
+
+.badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 8px;
+
+  &--required {
+    background: rgba(255, 92, 92, 0.2);
+    color: $danger;
+  }
+
+  &--best {
+    background: rgba(79, 140, 255, 0.2);
+    color: $primary;
+  }
+}
+
+/* ===============================
+   Generate Button
+================================ */
+
+.generate-btn {
+  background: $primary;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  &:hover {
+    background: $primary-hover;
+  }
+}
+
+.footer-info {
+  color: $text-muted;
+  font-size: 13px;
+}
+
+/* ===============================
+   Reports Section
+================================ */
+
+.recent-reports {
+  max-width: 1100px;
+  margin: 40px auto;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.reports-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.report-item {
+  background: $card-bg;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    border-color: $primary;
+    transform: translateY(-3px);
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+}
+
+.report-meta {
+  font-size: 12px;
+  color: $text-muted;
+}
+
+.match-score {
+  margin-top: 8px;
+  font-weight: 600;
+
+  &.score--high {
+    color: $success;
+  }
+
+  &.score--mid {
+    color: $warning;
+  }
+
+  &.score--low {
+    color: $danger;
+  }
+}
+
+/* ===============================
+   Footer
+================================ */
+
+.page-footer {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+
+  a {
+    font-size: 13px;
+    color: $text-muted;
 
     &:hover {
-        opacity: 0.9;
+      color: $primary;
     }
-
-    &:active {
-        transform: scale(0.98);
-    }
+  }
 }
 
-.recent-reports{
-    display: flex;
+/* ===============================
+   Loading Screen
+================================ */
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    color: $primary;
+    font-size: 24px;
+  }
+}
+
+/* ===============================
+   Responsive
+================================ */
+
+@media (max-width: 900px) {
+  .interview-card__body {
     flex-direction: column;
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 900px;
+  }
 
-    .reports-list{
-        display: flex;
-        gap: 0.75rem;
-        flex-wrap: wrap;
+  .panel-divider {
+    display: none;
+  }
 
-        .report-item{
-            background-color: $bg-card;
-            border: 1px solid $border-color;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            cursor: pointer;
-            flex-shrink: 0;
-
-            .match-score {
-                font-size: 0.8rem;
-                font-weight: 600;
-                color: $accent;
-                align-items: flex-start;
-            }
-        }
-    }
-}
-
-
-// ── Page Footer ───────────────────────────────────────────────────────────────
-.page-footer {
-    display: flex;
-    gap: 1.5rem;
-
-    a {
-        font-size: 0.8rem;
-        color: $text-muted;
-        text-decoration: none;
-        transition: color 0.2s;
-
-        &:hover {
-            color: $text-primary;
-        }
-    }
+  .home-page {
+    padding: 30px 20px;
+  }
 }
