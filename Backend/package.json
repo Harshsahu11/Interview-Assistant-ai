@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "start":"node server.js",
-=======
-    "start": "node server.js",
->>>>>>> 31028803e4745321739e64e2893ea54b82dd83cd
     "dev": "npx nodemon server.js"
   },
   "keywords": [],
