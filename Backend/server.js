@@ -8,8 +8,7 @@ connectToDB();
 
 const PORT = process.env.PORT || 3000;
 
-/* ---------- Serve Frontend Build ---------- */
-
+/* Serve frontend */
 const frontendPath = path.join(__dirname, "../Frontend/dist");
 
 app.use(require("express").static(frontendPath));
@@ -17,8 +16,6 @@ app.use(require("express").static(frontendPath));
 app.get("*", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
-
-/* ---------- Start Server ---------- */
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
