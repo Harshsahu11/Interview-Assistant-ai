@@ -1,5 +1,6 @@
 require("dotenv").config();
 const path = require("path");
+const express = require("express");
 
 const app = require("./src/app");
 const connectToDB = require("./src/config/database");
@@ -8,12 +9,12 @@ connectToDB();
 
 const PORT = process.env.PORT || 3000;
 
-/* Serve frontend */
+
 const frontendPath = path.join(__dirname, "../Frontend/dist");
 
-app.use(require("express").static(frontendPath));
+app.use(express.static(frontendPath));
 
-app.get("*", (req, res) => {
+app.get("/(.*)", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
 
