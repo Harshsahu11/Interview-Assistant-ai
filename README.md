@@ -111,7 +111,6 @@ project-root
 
 
 git clone https://github.com/HarshSahu11/Interview-Assistant-ai.git
-cd ai-interview-prep
 
 
 # 📦 Install Frontend
