@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start":"node server.js",
-    "dev": "npx nodemon server.js"
+    "build": "npm install --prefix Frontend && npm run build --prefix Frontend"
   },
   "keywords": [],
   "author": "",
