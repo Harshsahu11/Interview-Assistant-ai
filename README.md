@@ -64,11 +64,6 @@ The system analyzes a candidate's **resume, job description, and self-descriptio
 
 # 🏗 Project Architecture
 
-<img width="1841" height="880" alt="1" src="https://github.com/user-attachments/assets/755156af-ab39-4aa8-bf68-53e9731a47a7" />
-<img width="1915" height="877" alt="2" src="https://github.com/user-attachments/assets/4d25dba3-9dc7-47e2-ad5b-3f8df28036f3" />
-<img width="1907" height="872" alt="3" src="https://github.com/user-attachments/assets/3a721575-2e2e-40ef-83e0-cad4b66860bc" />
-<img width="1885" height="875" alt="4" src="https://github.com/user-attachments/assets/d0889388-89fc-48cf-a378-b30e228e097d" />
-
 project-root
 │
 ├── frontend
@@ -158,6 +153,13 @@ JWT_SECRET=your_secret_key
 GEMINI_API_KEY=your_gemini_api_key
 
 
+# Screenshots 
+
+
+<img width="1841" height="880" alt="1" src="https://github.com/user-attachments/assets/755156af-ab39-4aa8-bf68-53e9731a47a7" />
+<img width="1915" height="877" alt="2" src="https://github.com/user-attachments/assets/4d25dba3-9dc7-47e2-ad5b-3f8df28036f3" />
+<img width="1907" height="872" alt="3" src="https://github.com/user-attachments/assets/3a721575-2e2e-40ef-83e0-cad4b66860bc" />
+<img width="1885" height="875" alt="4" src="https://github.com/user-attachments/assets/d0889388-89fc-48cf-a378-b30e228e097d" />
 
 
 # 📚 Learning Outcomes
